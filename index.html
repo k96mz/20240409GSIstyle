@@ -43,7 +43,8 @@
           showCompass: true,
           showZoom: true,
           visualizePitch: true,
-        })
+        }),
+        "bottom-right"
       );
 
       //スケールコントロール
@@ -59,8 +60,12 @@
         new maplibregl.GeolocateControl({
           showAccuracyCircle: true,
           trackUserLocation: true,
-        })
+        }),
+        "bottom-right"
       );
+
+      map.showTileBoundaries = true;
+      map.showCollisionBoxes = false;
     </script>
   </body>
 </html>
