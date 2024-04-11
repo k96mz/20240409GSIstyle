@@ -34,7 +34,11 @@
         // style: "./pale.json",
         // style: "./std.json",
         style: "./blank.json",
+        hash: true,
       });
+
+      //拡大縮小、方位
+      map.addControl(new maplibregl.NavigationControl());
     </script>
   </body>
 </html>
