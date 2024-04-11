@@ -38,10 +38,29 @@
       });
 
       //拡大縮小、方位
-      map.addControl(new maplibregl.NavigationControl());
+      map.addControl(
+        new maplibregl.NavigationControl({
+          showCompass: true,
+          showZoom: true,
+          visualizePitch: true,
+        })
+      );
 
       //スケールコントロール
-      map.addControl(new maplibregl.ScaleControl());
+      map.addControl(
+        new maplibregl.ScaleControl({
+          maxWidth: 200,
+          unit: "metric",
+        })
+      );
+
+      //現在位置取得
+      map.addControl(
+        new maplibregl.GeolocateControl({
+          showAccuracyCircle: true,
+          trackUserLocation: true,
+        })
+      );
     </script>
   </body>
 </html>
