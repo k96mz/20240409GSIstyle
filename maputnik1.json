@@ -1,0 +1,159 @@
+{
+  "version": 8,
+  "metadata": {"maputnik:renderer": "mlgljs"},
+  "center": [138.9704299, 36.2342272],
+  "zoom": 4,
+  "sources": {
+    "gsibv-vectortile-source-1-4-16": {
+      "type": "vector",
+      "tiles": [
+        "https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 1,
+      "maxzoom": 8,
+      "attribution": "<a href=\"https://maps.gsi.go.jp/vector/\" target=\"_blank\">地理院地図Vector（仮称）</a>"
+    }
+  },
+  "glyphs": "https://maps.gsi.go.jp/xyz/noto-jp/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "海岸線",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-2250",
+        "title": "海岸線",
+        "path": "海岸線-海岸線",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "coastline",
+      "maxzoom": 8,
+      "paint": {"line-color": "rgba(106, 98, 98, 1)", "line-width": 2}
+    },
+    {
+      "id": "河川幅(大)",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-2256",
+        "title": "河川幅(大)",
+        "path": "河川-河川幅(大)",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "river",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 55301]],
+      "layout": {
+        "line-cap": "round",
+        "visibility": "visible",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "rgba(38, 11, 231, 1)",
+        "line-width": {"stops": [[4, 1], [6, 3], [7, 8]]}
+      }
+    },
+    {
+      "id": "河川幅(中)",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-2257",
+        "title": "河川幅(中)",
+        "path": "河川-河川幅(中)",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "river",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 55302]],
+      "layout": {"line-cap": "square", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(52, 98, 229, 1)",
+        "line-width": {"stops": [[4, 2], [6, 3], [7, 4]]}
+      }
+    },
+    {
+      "id": "河川幅(小)",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-2258",
+        "title": "河川幅(小)",
+        "path": "河川-河川幅(小)",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "river",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 55303]],
+      "layout": {"line-cap": "square", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(101, 103, 198, 1)",
+        "line-width": {"stops": [[4, 0.2], [6, 1], [7, 1.5]]}
+      }
+    },
+    {
+      "id": "主要な鉄道",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-1875",
+        "title": "主要な鉄道",
+        "path": "鉄道-主要な鉄道",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "railway",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 58201]],
+      "layout": {"line-cap": "square", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(218, 123, 8, 1)",
+        "line-width": {"stops": [[6, 2], [7, 3]]}
+      }
+    },
+    {
+      "id": "新幹線",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-1877",
+        "title": "新幹線",
+        "path": "鉄道-新幹線",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "railway",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 58203]],
+      "layout": {"line-cap": "square", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(227, 12, 12, 1)",
+        "line-width": {"stops": [[4, 2], [6, 3], [7, 5]]}
+      }
+    },
+    {
+      "id": "新幹線トンネル",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-1878",
+        "title": "新幹線トンネル",
+        "path": "鉄道-新幹線トンネル",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "railway",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 58204]],
+      "layout": {"line-cap": "square", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(231, 137, 172, 0.75)",
+        "line-width": {"stops": [[4, 2], [6, 3], [7, 5]]}
+      }
+    }
+  ],
+  "id": "lpjgyme"
+}

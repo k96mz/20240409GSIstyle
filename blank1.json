@@ -1,0 +1,424 @@
+{
+  "version": 8,
+  "glyphs": "https://maps.gsi.go.jp/xyz/noto-jp/{fontstack}/{range}.pbf",
+  "center": [138.9704299, 36.2342272],
+  "zoom": 8,
+  "sources": {
+    "gsibv-vectortile-source-1-4-16": {
+      "type": "vector",
+      "tiles": [
+        "https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 4,
+      "maxzoom": 16,
+      "attribution": "<a href=\"https://maps.gsi.go.jp/vector/\" target=\"_blank\">地理院地図Vector（仮称）</a>"
+    }
+  },
+  "layers": [
+    {
+      "id": "gsibv-vectortile-layer-2469",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "boundary",
+      "metadata": {
+        "layer-id": "layer-2240",
+        "title": "都府県界及び北海道総合振興局・振興局界",
+        "path": "境界-行政界-都府県界及び北海道総合振興局・振興局界",
+        "added": 1
+      },
+      "minzoom": 8,
+      "maxzoom": 17,
+      "filter": ["all", ["in", "ftCode", 1211]],
+      "layout": { "line-cap": "round", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(100,100,100,1)",
+        "line-width": 2.5,
+        "line-dasharray": [7, 5, 0.1, 5]
+      }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2470",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "boundary",
+      "metadata": {
+        "layer-id": "layer-2241",
+        "title": "市区町村界",
+        "path": "境界-行政界-市区町村界",
+        "added": 1
+      },
+      "minzoom": 11,
+      "maxzoom": 17,
+      "filter": ["all", ["in", "ftCode", 1212]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(100,100,100,1)",
+        "line-width": 1.5,
+        "line-dasharray": [6, 2, 1, 2, 1, 2]
+      }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2471",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "boundary",
+      "metadata": {
+        "layer-id": "layer-2242",
+        "title": "所属界（所属を明示する境界線）",
+        "path": "境界-行政界-所属界（所属を明示する境界線）",
+        "added": 1
+      },
+      "minzoom": 11,
+      "maxzoom": 17,
+      "filter": ["all", ["in", "ftCode", 1221]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(100,100,100,1)",
+        "line-width": 1.5,
+        "line-dasharray": [4, 1, 1, 5]
+      }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2472",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "boundary",
+      "metadata": {
+        "layer-id": "layer-2238",
+        "title": "地方界",
+        "path": "境界-行政界-地方界",
+        "added": 1
+      },
+      "minzoom": 6,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 51212]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgb(100,100,100)",
+        "line-width": 1,
+        "line-dasharray": [10, 2, 1, 2]
+      }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2473",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "boundary",
+      "metadata": {
+        "layer-id": "layer-2239",
+        "title": "国の所属界",
+        "path": "境界-行政界-国の所属界",
+        "added": 1
+      },
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 51221]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": { "line-color": "rgb(34,24,21)", "line-width": 1 }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2333",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "coastline",
+      "metadata": {
+        "layer-id": "layer-2251",
+        "title": "通常部",
+        "path": "海岸線-通常部",
+        "added": 1
+      },
+      "minzoom": 14,
+      "maxzoom": 17,
+      "filter": ["all", ["in", "ftCode", 5101]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": { "line-color": "rgba(100,100,100,1)", "line-width": 0.5 }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2335",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "coastline",
+      "metadata": {
+        "layer-id": "layer-2253",
+        "title": "岩等に接する部分",
+        "path": "海岸線-岩等に接する部分",
+        "added": 1
+      },
+      "minzoom": 14,
+      "maxzoom": 18,
+      "filter": ["all", ["in", "ftCode", 5102]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": { "line-color": "rgba(100,100,100,1)", "line-width": 0.5 }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2336",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "coastline",
+      "metadata": {
+        "layer-id": "layer-2254",
+        "title": "堤防等に接する部分",
+        "path": "海岸線-堤防等に接する部分",
+        "added": 1
+      },
+      "minzoom": 14,
+      "maxzoom": 17,
+      "filter": ["all", ["in", "ftCode", 5103]],
+      "layout": { "line-cap": "round", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(100,100,100,1)",
+        "line-width": 1.5,
+        "line-dasharray": [0.2, 4]
+      }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2337",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "coastline",
+      "metadata": {
+        "layer-id": "layer-2254",
+        "title": "堤防等に接する部分",
+        "path": "海岸線-堤防等に接する部分",
+        "added": 1
+      },
+      "minzoom": 14,
+      "maxzoom": 17,
+      "filter": ["all", ["in", "ftCode", 5103]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(100,100,100,1)",
+        "line-width": 1,
+        "line-offset": -1
+      }
+    },
+
+    {
+      "id": "gsibv-vectortile-layer-2340",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "coastline",
+      "metadata": {
+        "layer-id": "layer-2250",
+        "title": "海岸線",
+        "path": "海岸線-海岸線",
+        "added": 1
+      }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2326",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "river",
+      "metadata": {
+        "layer-id": "layer-2260",
+        "title": "通常部",
+        "path": "河川-通常部",
+        "added": 1
+      },
+      "minzoom": 8,
+      "maxzoom": 14,
+      "filter": ["all", ["in", "ftCode", 5301]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": { "line-color": "rgba(230,230,230,1)", "line-width": 1 }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2327",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "river",
+      "metadata": {
+        "layer-id": "layer-2261",
+        "title": "通常部",
+        "path": "河川-通常部",
+        "added": 1
+      },
+      "minzoom": 14,
+      "maxzoom": 17,
+      "filter": ["all", ["in", "ftCode", 5201, 5301]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": { "line-color": "rgba(100,100,100,1)", "line-width": 0.5 }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2329",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "river",
+      "metadata": {
+        "layer-id": "layer-2256",
+        "title": "河川幅(大)",
+        "path": "河川-河川幅(大)",
+        "added": 1
+      },
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 55301]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(231,231,231,1)",
+        "line-width": {
+          "stops": [
+            [4, 1],
+            [6, 2],
+            [7, 2.5]
+          ]
+        }
+      }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2330",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "river",
+      "metadata": {
+        "layer-id": "layer-2257",
+        "title": "河川幅(中)",
+        "path": "河川-河川幅(中)",
+        "added": 1
+      },
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 55302]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(231,231,231,1)",
+        "line-width": {
+          "stops": [
+            [4, 0.5],
+            [6, 1.5],
+            [7, 2]
+          ]
+        }
+      }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2331",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "river",
+      "metadata": {
+        "layer-id": "layer-2258",
+        "title": "河川幅(小)",
+        "path": "河川-河川幅(小)",
+        "added": 1
+      },
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 55303]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(231,231,231,1)",
+        "line-width": {
+          "stops": [
+            [4, 0.2],
+            [6, 1],
+            [7, 1.5]
+          ]
+        }
+      }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2332",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "river",
+      "metadata": {
+        "layer-id": "layer-2259",
+        "title": "河川幅(極小)",
+        "path": "河川-河川幅(極小)",
+        "added": 1
+      },
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 55304]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(231,231,231,1)",
+        "line-width": {
+          "stops": [
+            [4, 0.1],
+            [6, 0.5],
+            [7, 1]
+          ]
+        }
+      }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2808",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "railway",
+      "metadata": {
+        "layer-id": "layer-1875",
+        "title": "主要な鉄道",
+        "path": "鉄道-主要な鉄道",
+        "added": 1
+      },
+      "minzoom": 6,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 58201]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(100,100,100,1)",
+        "line-width": {
+          "stops": [
+            [6, 1],
+            [7, 1.5]
+          ]
+        }
+      }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2810",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "railway",
+      "metadata": {
+        "layer-id": "layer-1877",
+        "title": "新幹線",
+        "path": "鉄道-新幹線",
+        "added": 1
+      },
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 58203]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(100,100,100,1)",
+        "line-width": {
+          "stops": [
+            [4, 0.5],
+            [6, 1.5],
+            [7, 2.5]
+          ]
+        }
+      }
+    },
+    {
+      "id": "gsibv-vectortile-layer-2811",
+      "type": "line",
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "railway",
+      "metadata": {
+        "layer-id": "layer-1878",
+        "title": "新幹線トンネル",
+        "path": "鉄道-新幹線トンネル",
+        "added": 1
+      },
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 58204]],
+      "layout": { "line-cap": "square", "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(100,100,100,0.75)",
+        "line-width": {
+          "stops": [
+            [4, 0.5],
+            [6, 1.5],
+            [7, 2.5]
+          ]
+        }
+      }
+    }
+  ]
+}

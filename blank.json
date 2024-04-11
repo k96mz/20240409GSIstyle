@@ -1,0 +1,491 @@
+{
+  "version": 8,
+  "metadata": {"maputnik:renderer": "mlgljs"},
+  "center": [138.9704299, 36.2342272],
+  "zoom": 4,
+  "sources": {
+    "gsibv-vectortile-source-1-4-16": {
+      "type": "vector",
+      "tiles": [
+        "https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 1,
+      "maxzoom": 8,
+      "attribution": "<a href=\"https://maps.gsi.go.jp/vector/\" target=\"_blank\">地理院地図Vector（仮称）</a>"
+    }
+  },
+  "glyphs": "https://maps.gsi.go.jp/xyz/noto-jp/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "水域",
+      "type": "fill",
+      "metadata": {
+        "layer-id": "layer-1650",
+        "title": "水域",
+        "path": "水域",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "waterarea",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 55000]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "rgba(172, 171, 227, 1)"}
+    },
+    {
+      "id": "地方界",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-2238",
+        "title": "地方界",
+        "path": "境界-行政界-地方界",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "boundary",
+      "minzoom": 6,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 51212]],
+      "layout": {"line-cap": "square", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(189, 188, 184, 1)",
+        "line-width": 1,
+        "line-dasharray": [10, 2, 1, 2],
+        "line-opacity": 0.8,
+        "line-blur": 1
+      }
+    },
+    {
+      "id": "人口100万人以上",
+      "type": "symbol",
+      "metadata": {
+        "layer-id": "layer-1414",
+        "title": "人口100万人以上",
+        "path": "記号-人口100万人以上",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "symbol",
+      "minzoom": 4,
+      "maxzoom": 6,
+      "filter": ["all", ["in", "ftCode", 51301]],
+      "layout": {
+        "text-allow-overlap": false,
+        "icon-allow-overlap": false,
+        "icon-image": "人口100万人以上2-500",
+        "text-offset": [
+          "case",
+          ["==", ["get", "1"], 2],
+          [
+            "case",
+            [
+              "any",
+              ["==", ["get", "dspPos"], "CB"],
+              ["==", ["get", "dspPos"], "RB"],
+              ["==", ["get", "dspPos"], "LB"]
+            ],
+            ["literal", [0.5, 0]],
+            [
+              "any",
+              ["==", ["get", "dspPos"], "CT"],
+              ["==", ["get", "dspPos"], "RT"],
+              ["==", ["get", "dspPos"], "LT"]
+            ],
+            ["literal", [-0.5, 0]],
+            ["any", ["==", ["get", "dspPos"], "LC"]],
+            ["literal", [0, 0.5]],
+            ["any", ["==", ["get", "dspPos"], "RC"]],
+            ["literal", [0, -0.5]],
+            ["literal", [0, 0]]
+          ],
+          [
+            "case",
+            [
+              "any",
+              ["==", ["get", "dspPos"], "LT"],
+              ["==", ["get", "dspPos"], "LC"],
+              ["==", ["get", "dspPos"], "LB"]
+            ],
+            ["literal", [0.5, 0]],
+            [
+              "any",
+              ["==", ["get", "dspPos"], "RT"],
+              ["==", ["get", "dspPos"], "RC"],
+              ["==", ["get", "dspPos"], "RB"]
+            ],
+            ["literal", [-0.5, 0]],
+            ["any", ["==", ["get", "dspPos"], "CT"]],
+            ["literal", [0, 0.5]],
+            ["any", ["==", ["get", "dspPos"], "CB"]],
+            ["literal", [0, -0.5]],
+            ["literal", [0, 0]]
+          ]
+        ],
+        "text-size": 10,
+        "text-anchor": [
+          "case",
+          ["==", ["get", "1"], 2],
+          [
+            "case",
+            ["==", ["get", "dspPos"], "LT"],
+            "top-right",
+            ["==", ["get", "dspPos"], "CT"],
+            "right",
+            ["==", ["get", "dspPos"], "RT"],
+            "bottom-right",
+            ["==", ["get", "dspPos"], "LC"],
+            "top",
+            ["==", ["get", "dspPos"], "CC"],
+            "center",
+            ["==", ["get", "dspPos"], "RC"],
+            "bottom",
+            ["==", ["get", "dspPos"], "LB"],
+            "top-left",
+            ["==", ["get", "dspPos"], "CB"],
+            "left",
+            ["==", ["get", "dspPos"], "RB"],
+            "bottom-left",
+            "center"
+          ],
+          [
+            "case",
+            ["==", ["get", "dspPos"], "LT"],
+            "top-left",
+            ["==", ["get", "dspPos"], "CT"],
+            "top",
+            ["==", ["get", "dspPos"], "RT"],
+            "top-right",
+            ["==", ["get", "dspPos"], "LC"],
+            "left",
+            ["==", ["get", "dspPos"], "CC"],
+            "center",
+            ["==", ["get", "dspPos"], "RC"],
+            "right",
+            ["==", ["get", "dspPos"], "LB"],
+            "bottom-left",
+            ["==", ["get", "dspPos"], "CB"],
+            "bottom",
+            ["==", ["get", "dspPos"], "RB"],
+            "bottom-right",
+            "center"
+          ]
+        ],
+        "icon-pitch-alignment": "viewport",
+        "icon-rotation-alignment": "viewport",
+        "text-pitch-alignment": "viewport",
+        "text-rotation-alignment": "viewport",
+        "text-field": ["get", "knj"],
+        "text-font": ["NotoSansCJKjp-Regular"],
+        "symbol-placement": "point",
+        "text-keep-upright": true,
+        "symbol-z-order": "auto",
+        "text-max-width": 100,
+        "visibility": "visible",
+        "icon-size": 0.3
+      },
+      "paint": {
+        "text-color": "rgba(130, 123, 123, 1)",
+        "text-halo-color": "rgba(255,255,255,1)",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "人口100万人以上2",
+      "type": "symbol",
+      "metadata": {
+        "layer-id": "layer-1415",
+        "title": "人口100万人以上",
+        "path": "記号-人口100万人以上",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "symbol",
+      "minzoom": 6,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 51301]],
+      "layout": {
+        "icon-size": {"stops": [[6, 0.3], [7, 0.5]]},
+        "icon-image": "人口100万人以上-500",
+        "text-offset": [
+          "case",
+          ["==", ["get", "1"], 2],
+          [
+            "case",
+            [
+              "any",
+              ["==", ["get", "dspPos"], "CB"],
+              ["==", ["get", "dspPos"], "RB"],
+              ["==", ["get", "dspPos"], "LB"]
+            ],
+            ["literal", [0.5, 0]],
+            [
+              "any",
+              ["==", ["get", "dspPos"], "CT"],
+              ["==", ["get", "dspPos"], "RT"],
+              ["==", ["get", "dspPos"], "LT"]
+            ],
+            ["literal", [-0.5, 0]],
+            ["any", ["==", ["get", "dspPos"], "LC"]],
+            ["literal", [0, 0.5]],
+            ["any", ["==", ["get", "dspPos"], "RC"]],
+            ["literal", [0, -0.5]],
+            ["literal", [0, 0]]
+          ],
+          [
+            "case",
+            [
+              "any",
+              ["==", ["get", "dspPos"], "LT"],
+              ["==", ["get", "dspPos"], "LC"],
+              ["==", ["get", "dspPos"], "LB"]
+            ],
+            ["literal", [0.5, 0]],
+            [
+              "any",
+              ["==", ["get", "dspPos"], "RT"],
+              ["==", ["get", "dspPos"], "RC"],
+              ["==", ["get", "dspPos"], "RB"]
+            ],
+            ["literal", [-0.5, 0]],
+            ["any", ["==", ["get", "dspPos"], "CT"]],
+            ["literal", [0, 0.5]],
+            ["any", ["==", ["get", "dspPos"], "CB"]],
+            ["literal", [0, -0.5]],
+            ["literal", [0, 0]]
+          ]
+        ],
+        "text-size": {"stops": [[6, 10], [7, 18]]},
+        "text-anchor": [
+          "case",
+          ["==", ["get", "1"], 2],
+          [
+            "case",
+            ["==", ["get", "dspPos"], "LT"],
+            "top-right",
+            ["==", ["get", "dspPos"], "CT"],
+            "right",
+            ["==", ["get", "dspPos"], "RT"],
+            "bottom-right",
+            ["==", ["get", "dspPos"], "LC"],
+            "top",
+            ["==", ["get", "dspPos"], "CC"],
+            "center",
+            ["==", ["get", "dspPos"], "RC"],
+            "bottom",
+            ["==", ["get", "dspPos"], "LB"],
+            "top-left",
+            ["==", ["get", "dspPos"], "CB"],
+            "left",
+            ["==", ["get", "dspPos"], "RB"],
+            "bottom-left",
+            "center"
+          ],
+          [
+            "case",
+            ["==", ["get", "dspPos"], "LT"],
+            "top-left",
+            ["==", ["get", "dspPos"], "CT"],
+            "top",
+            ["==", ["get", "dspPos"], "RT"],
+            "top-right",
+            ["==", ["get", "dspPos"], "LC"],
+            "left",
+            ["==", ["get", "dspPos"], "CC"],
+            "center",
+            ["==", ["get", "dspPos"], "RC"],
+            "right",
+            ["==", ["get", "dspPos"], "LB"],
+            "bottom-left",
+            ["==", ["get", "dspPos"], "CB"],
+            "bottom",
+            ["==", ["get", "dspPos"], "RB"],
+            "bottom-right",
+            "center"
+          ]
+        ],
+        "icon-pitch-alignment": "viewport",
+        "icon-rotation-alignment": "viewport",
+        "text-pitch-alignment": "viewport",
+        "text-rotation-alignment": "viewport",
+        "text-field": ["get", "knj"],
+        "text-font": ["NotoSansCJKjp-Regular"],
+        "symbol-placement": "point",
+        "icon-allow-overlap": true,
+        "text-keep-upright": true,
+        "text-allow-overlap": false,
+        "symbol-z-order": "auto",
+        "text-max-width": 100,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "rgba(100,100,100,1)",
+        "text-halo-color": "rgba(255,255,255,1)",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "主要な空港",
+      "type": "symbol",
+      "metadata": {
+        "layer-id": "layer-1421",
+        "title": "主要な空港",
+        "path": "記号-主要な空港",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "symbol",
+      "minzoom": 6,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 56376]],
+      "layout": {
+        "icon-size": {"stops": [[6, 0.3], [7, 0.5]]},
+        "icon-image": "主要な空港-500",
+        "icon-pitch-alignment": "viewport",
+        "icon-rotation-alignment": "viewport",
+        "text-font": ["NotoSansCJKjp-Regular"],
+        "symbol-placement": "point",
+        "icon-allow-overlap": true,
+        "text-keep-upright": true,
+        "text-allow-overlap": false,
+        "symbol-z-order": "auto",
+        "text-max-width": 100,
+        "visibility": "visible"
+      }
+    },
+    {
+      "id": "海岸線",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-2250",
+        "title": "海岸線",
+        "path": "海岸線-海岸線",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "coastline",
+      "paint": {"line-color": "rgba(131, 122, 122, 1)", "line-width": 2}
+    },
+    {
+      "id": "河川幅(大)",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-2256",
+        "title": "河川幅(大)",
+        "path": "河川-河川幅(大)",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "river",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 55301]],
+      "layout": {"line-cap": "square", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(22, 11, 237, 1)",
+        "line-width": {"stops": [[4, 4], [6, 8], [7, 12]]}
+      }
+    },
+    {
+      "id": "河川幅(中)",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-2257",
+        "title": "河川幅(中)",
+        "path": "河川-河川幅(中)",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "river",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 55302]],
+      "layout": {"line-cap": "square", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(61, 64, 243, 1)",
+        "line-width": {"stops": [[4, 2], [6, 4], [7, 6]]}
+      }
+    },
+    {
+      "id": "河川幅(小)",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-2258",
+        "title": "河川幅(小)",
+        "path": "河川-河川幅(小)",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "river",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 55303]],
+      "layout": {"line-cap": "square", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(149, 164, 233, 1)",
+        "line-width": {"stops": [[4, 0.5], [6, 1.5], [7, 3]]}
+      }
+    },
+    {
+      "id": "主要な鉄道",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-1875",
+        "title": "主要な鉄道",
+        "path": "鉄道-主要な鉄道",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "railway",
+      "minzoom": 6,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 58201]],
+      "layout": {"line-cap": "square", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(233, 133, 13, 1)",
+        "line-width": {"stops": [[6, 1], [7, 1.5]]}
+      }
+    },
+    {
+      "id": "新幹線",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-1877",
+        "title": "新幹線",
+        "path": "鉄道-新幹線",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "railway",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 58203]],
+      "layout": {"line-cap": "square", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(239, 16, 16, 1)",
+        "line-width": {"stops": [[4, 2], [6, 3], [7, 5]]}
+      }
+    },
+    {
+      "id": "新幹線トンネル",
+      "type": "line",
+      "metadata": {
+        "layer-id": "layer-1878",
+        "title": "新幹線トンネル",
+        "path": "鉄道-新幹線トンネル",
+        "added": 1
+      },
+      "source": "gsibv-vectortile-source-1-4-16",
+      "source-layer": "railway",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "ftCode", 58204]],
+      "layout": {"line-cap": "square", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(243, 124, 124, 0.75)",
+        "line-width": {"stops": [[4, 2], [6, 3], [7, 5]]}
+      }
+    }
+  ],
+  "id": "7q6bzv6"
+}
